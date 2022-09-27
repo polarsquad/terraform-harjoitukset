@@ -19,7 +19,7 @@ edeten edistyneempiin käyttö.
     - Muuttujien käyttö
     - 
 4. Resurssien hallinta
-    - Resurssien hallinta luonti-muutos-poisto
+    - Resurssien hallinta luonti-muutos-poisto (hashicorp/fakewebservices)
     - Datasourcen käyttö
 5. State
     - ???
