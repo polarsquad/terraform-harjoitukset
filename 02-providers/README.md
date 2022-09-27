@@ -4,10 +4,10 @@ Kuten ensimmäisessä tehtävässä huomattiin, luotaessa resursseja käyttää 
 
 Määrittäessämme varsinaisesti resusseja ja kokonaisua ympäristöjä terraformin avulla, on monesti käytössä myös useita providereita.  
 Yksi merkittävä seikka providereiden käyttöön otossa, on niiden versioiden hallinta. Etenkin kun terraformin avulla luodaan tuotanto ympäristöjä, on tärkeää ainakin jollain tarkkuudella määrittää versiot, joita käytetään.  
-Alla näkyy esimerkki määritys, jossa määritellään tarvitsemamme `local` provider. Luo siis tiedosto `main.tf` ja lisää alla näkyvä määritys tiedostoon.
+Alla näkyy esimerkki määritys, jossa määritellään tarvitsemamme `local` provider. Luo siis tiedosto `providers.tf` ja lisää alla näkyvä määritys tiedostoon.
 
 ```yaml
-## main.tf
+## providers.tf
 terraform {
     # Lisätä tarvitsemamme providerit
     required_providers {
@@ -73,7 +73,7 @@ Tällä määrityksellä olemme voineet määrittää käytettävän version sit
 Moni provider tarvitsee konfigurointia, jotta se voidaan ottaa käyttöön. Tämä edellyttää lisä määrityksiä providerin osalta. Mikäli provider tarvitsee erillistä konfigurointia, tarvitsee määritykselle luoda oma osionsa terraform määritykseen.
 
 ```yaml
-# main.tf
+# providers.tf
 terraform {
     required_providers {
         local = {...}
