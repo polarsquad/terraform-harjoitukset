@@ -11,10 +11,11 @@ on darwin_arm64
 ```
 
 Tässä tapauksessa koneella on asennettuna Terraformista versio 1.3.0.
+Jos komento ei toimi, niin tarkista että terraform on asennettu oikein. Ohjeet löytyvät [täältä](https://learn.hashicorp.com/tutorials/terraform/install-cli)
 
 ## Ensimmäisen koodipätkän kirjoittaminen
 Terraform määritykset kirjoitetaan `.tf` pääteellä varustettuihin tiedostoihin.  
-Luodaan siis ensimmäinen tiedosto, johon määritetään seuraava sisältö.
+Luodaan siis ensimmäinen terraform-tiedosto, johon määritetään seuraava sisältö.
 
 ```yaml
 resource "local_file" "tiedosto1" {
@@ -23,7 +24,7 @@ resource "local_file" "tiedosto1" {
 }
 ```
 
-Oheinen resurssi luo hakemistoon, jotta terraform ajetaan, tiedoston nimeltä _tiedosto.txt_, jonka sisällöksi asetetaan `content` parametrin sisältämä teksti.  
+Oheinen resurssi luo hakemistoon, jossa terraform ajetaan, tiedoston nimeltä _tiedosto.txt_, jonka sisällöksi asetetaan `content` parametrin sisältämä teksti.  
 Ennen kuin resurssia voidaan kuitenkaan luoda, pitää terraformin osalta ympäristö alustaa käyttöön, joka tapahtuu `terraform init` komennolla.
 
 ```sh
@@ -53,7 +54,7 @@ on darwin_arm64
 Nyt ympäristö on alustettu, ja ollaan valmiita varsinaisesti käyttämään terraformia resurssien luomiseen.
 Huomioitavaa on että terraform on init komennon osana asentanut myös yhden providerin, joka näkyy yllä olevassa tulosteessa.
 Tämä johtuu siitä, että itse terraform CLI ei itsessään omaa varsinaisesti resurssien luomiseen toiminnallisuuksia, vaan mahdollistaa ainoastaan terraformin perus toiminnallisuudet. Tämän johdosta terraformin kanssa käytetään käytännössä aina erillisiä providereita, joiden avulla lisätään tarvitsemamme toiminnot.  
-*Local* provideriin liittyvä dokumentaatio on nähtävissä Terraform Registryn kautta, ja tätä voimme tarkastella osoitteessa: <https://registry.terraform.io/providers/hashicorp/local/latest/docs/resources/file>
+*Local* provideriin liittyvä dokumentaatio on nähtävissä Terraform Registryn kautta, ja tätä voi tarkastella osoitteessa: <https://registry.terraform.io/providers/hashicorp/local/latest/docs/resources/file>
 
 ## Ensimmäisen resurssin luominen
 Avataan siis uudestaan editoriin `main.tf` tiedosto, ja lisätään sinne ensimmäinen resurssin määritys.
@@ -69,9 +70,10 @@ Tarkastellessamme yllä olevaa resurssi määritystä, voidaan siitä huomioida 
 `"local_file"` määritys määrittää millaista resurssia olemme luomassa. Joka tässä tapauksessa on paikallinen tiedosto.  
 `"teksti_tiedosto"` on resurssin nimi, jolla nimellä terraform sen tuntee resurssina.  
 Resurssi *local_file* tarvitsee toimiakseen myös määritteitä, jotta resurssi voidaan luoda.  
-Kyseine resurssityyppi vaatii toimiakseen vähintään seuraavat parametrit:
+Kyseinen resurssityyppi vaatii toimiakseen vähintään seuraavat parametrit:
 `filename` määrittää tiedoston nimen.  
 `content` parametrin sisältämä teksti tallennetaan luotavaan tiedostoon.
+Terraform-dokumentaatiosta voit aina tarkistaa resursseihin tarvittavat vaaditut (required) parametrit.
 
 Tämän jälkeen voidaan siirtyä eteenpäin terraform workflowssa, ja katsoa mitä tämä määrittely olisi tekemässä, mikäli se ajetaan. Vaihetta kutsutaan myös ns. *dry-run* vaiheeksi.
 ```sh
@@ -93,7 +95,7 @@ Terraform will perform the following actions:
 Plan: 1 to add, 0 to change, 0 to destroy.
 ```
 Komennon suorittamisen jälkeen, terraform näyttää mitä se tekisi. Huomioitavaa on myös, että vaikka määritimme vain kaksi parametria resurssille, tallentaa terraform resurssista siitä huolimatta myös muita tietoja. Osan näistä voisimme määrittää itse, mutta `id` parametri on terraformin sisäiseen toimintaan liittyvä arvo, jolla se tunnistaa luodut resurssit.  
-Seuraavaksi voidaankin samantien myös luoda tuo resurssi. Annetaan siis `terraform apply` komento, ja mikäli määritykset ovat oikein, kysyy se seuraavaksi vahvistamaan resurssien luomisen, vastataan siihen _yes_.
+Seuraavaksi voidaan myös luoda tämä resurssi. Annetaan siis `terraform apply` komento, ja mikäli määritykset ovat oikein, kysyy se seuraavaksi vahvistamaan resurssien luomisen, vastataan siihen _yes_.
 ```sh
 $ terraform apply
 Terraform used the selected providers to generate the following execution plan. Resource actions are indicated with the following symbols:
@@ -132,7 +134,7 @@ Mahdollisia kokeiluita:
 - tiedoston oikeuksien määrittäminen
 
 **Resurssin tuhoaminen**  
-Mikäli resurssia ei enää tarvita, voidaan ne tuhota käyttäen terraform komentoa. Komento noudattaa samaa tuttua tapaa, kuin resurssien luomisessa. Ensin näytetään mitään terraform olisi tekemässä, ja hyväksynnän jälkeen se suorittaa resurssien tuhoamisen.
+Mikäli resurssia ei enää tarvita, voidaan ne tuhota käyttäen terraform komentoa `terraform destroy`. Komento noudattaa samaa tuttua tapaa, kuin resurssien luomisessa. Ensin näytetään mitään terraform olisi tekemässä, ja hyväksynnän jälkeen se suorittaa resurssien tuhoamisen.
 ```sh
 $ terraform destroy
 
