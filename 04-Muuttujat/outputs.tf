@@ -1,3 +1,3 @@
-output "serveeri_nimi" {
+output "serveri_nimi" {
   value = fakewebservices_server.serveri.name
 }

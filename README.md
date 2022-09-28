@@ -15,12 +15,12 @@ edeten edistyneempiin käyttö.
     - Providerien käyttö
     - Versiointi
     - Providerin konfigurointi
-3. Muuttujat ja IF/ELSE
-    - Muuttujien käyttö
-    - 
-4. Resurssien hallinta
+3. Resurssien hallinta
     - Resurssien hallinta luonti-muutos-poisto (hashicorp/fakewebservices)
     - Datasourcen käyttö
+4. Muuttujat ja IF/ELSE
+    - Muuttujien käyttö
+    - Outputit
 5. State
     - ???
 5. Modulit

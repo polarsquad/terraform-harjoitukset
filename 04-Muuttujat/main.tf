@@ -8,7 +8,7 @@ resource "local_file" "tiedosto" {
 resource "fakewebservices_vpc" "verkko" {
     name       = "vpc"
     # name = "vpc-${var.nimi}"
-    cidr_block = "10.100.0.0/24"
+    cidr_block = "10.100.1.0/24"
 }
 
 resource "fakewebservices_server" "serveri" {
