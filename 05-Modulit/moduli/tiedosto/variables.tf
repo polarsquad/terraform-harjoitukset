@@ -5,7 +5,7 @@ variable "tiedoston_kansio" {
 
 variable "tiedoston_nimi" {
     description = "Tiedostolle annettava nimi"
-    default = "tiedosto.txt"
+    default = "tiedosto"
     type        = string
 }
 
