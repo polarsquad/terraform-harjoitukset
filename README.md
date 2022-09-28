@@ -15,16 +15,11 @@ edeten edistyneempiin käyttö.
     - Providerien käyttö
     - Versiointi
     - Providerin konfigurointi
-3. Resurssien hallinta
+3. Resurssien perusteita
     - Resurssien hallinta luonti-muutos-poisto (hashicorp/fakewebservices)
-    - Datasourcen käyttö
-4. Muuttujat ja IF/ELSE
-    - Muuttujien käyttö
-    - Outputit
-5. State
-    - ???
-5. Modulit
+4. Modulit
     - Modulien käyttö
-    - Modulin tekeminen
-6. VMWare
-    - Virtuaalikoneiden provisiointi
+    - Moduli esimerkki
+5. VMWare
+    - vSphere data sourcejen käyttöä ja providerin konfigurointi
+    - Virtuaalikoneiden provisiointi modulin avulla
