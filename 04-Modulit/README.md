@@ -1,4 +1,4 @@
-# 5. harjoitus - modulit
+# 4. harjoitus - modulit
 
 Tässä kansiossa on moduli nimeltä tiedosto. Sitä kutsutaan esimerkkikonfiguraatiossa, jonka löydät main.tf -tiedostosta.
 
