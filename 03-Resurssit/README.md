@@ -4,6 +4,9 @@ Kun olemme määritelleet käytetävät providerit, pääsemme itse asiaan, eli 
 
 **Resurssien luominen**
 
+Huomaa, että fakewebservices provider ei toimi ilman Terraform Cloud -tiliä. Näin nämä
+harjoitukset toimivat vain esimerkkeinä. 
+
 Luodaan ensin pari uutta resurssia `fakewebservices` providerin avulla. Tutki providerin dokumentaatiota ja mitä resursseja sillä voidaan luoda: <https://registry.terraform.io/providers/hashicorp/fakewebservices/latest/docs>. Valitse sivulta `Documentation` ja vasemmasta valikosta sen jälkeen `Resources`. Huomaat, että tämä provider mahdollistaa neljän eri resurssin luomisen:
 `fakewebservices_database`, `fakewebservices_load_balancer`, `fakewebservices_server` ja `fakewebservices_ vpc`. Tutki näitä eri resursseja ja mitä parametrejä niillä on. Jokaiselle resurssille löytyy sekä pakollisia (Required), että valinnaisia (Optional) parametreja.
 
