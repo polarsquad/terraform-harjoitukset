@@ -14,5 +14,5 @@ terraform {
 }
 
 provider "fakewebservices" {
-    token = "x3GTPBgZaeiWeg.atlasv1.p7YO15Ea7pV9IwzdFzz7FIDZfudIl87LU0z4nK3OZ19kfXhgQH3vevm6hGEuJqnbUUs"
+    token = "[token]"
 }
