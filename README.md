@@ -17,9 +17,11 @@ edeten edistyneempiin käyttö.
     - Providerin konfigurointi
 3. Resurssien perusteita
     - Resurssien hallinta luonti-muutos-poisto (hashicorp/fakewebservices)
-4. Modulit
+4. Loopit ja konditionaalit
+    - Käydään läpi mahdollisuudet toteuttaa Terraformissa looppeja ja if/else toteutuksia
+5. Modulit
     - Modulien käyttö
     - Moduli esimerkki
-5. VMWare
+6. VMWare
     - vSphere data sourcejen käyttöä ja providerin konfigurointi
     - Virtuaalikoneiden provisiointi modulin avulla
