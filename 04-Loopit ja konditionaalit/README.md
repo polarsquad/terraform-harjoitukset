@@ -11,3 +11,11 @@ Toinen näistä on `count` toiminto, ja toinen on `for_each` toiminto.
 `count` toimintoa käytettäessä, voidaan loopin sisällä käyttää hyödyksi tietoa, monesko suoritus kerta loopista on menossa, tähän arvoon voidaan viitata käyttämällä muuttujaa `count.index`.
 
 `for_each = toset(var.lista)` toteutus suorittaa listan sisältävän muuttujan perusteella loopin. Lista pitää kuitenkin muuntaa set muuttujaksi ensin, jotta for_each pystyy sen ottamaan vastaan. Erona `count` toimintoon nähden on se, että loopin sisällä voidaan hyödyntää loopin alkulähteeksi annetun tietueen tietoja, joihin viitataan käyttämällä muuttujaa `each.value`.
+
+## IF/ELSE
+
+Terraformilla voidaan tarkistaa muuttujien arvoja ja niiden perusteella valita operaatio. Tämä on niin sanottu if/else-blokki.
+Toimintoa voidaan hyödyntää, esim. mikäli jokin resurssi halutaan toteuttaa ehdonalaisesti. Vaikkapa virtuaalipalvelimelle erillisen lisälevyn määrittäminen voisi olla if/else toiminnon takana.
+
+Syntaksi noudattaa seuraavaa:  
+`muuttuja = (testattava_muuttuja == "" ? "Jos tosi" : oletusarvo)`
