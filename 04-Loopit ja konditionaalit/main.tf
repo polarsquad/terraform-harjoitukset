@@ -29,3 +29,16 @@ resource "local_file" "jos_ehka" {
     filename = "jos.txt"
     content = (var.tyhja == "" ? "Olihan se tyhjä" : var.tyhja)
 }
+
+# Ehdonalaisesti luotavan resurssin esimerkki
+# Eli mikäli halutaan kontrolloida sitä, luodaanko jonkin resurssi vaiko ei.
+variable "luodaanko" {
+    type = bool
+    default = false
+}
+
+resource "local_file" "luodaan_haluttaessa" {
+    count = (var.luodaanko == true ? 1 : 0)
+    filename = "ehdollinen.txt"
+    content = "Tämä tiedosto on luotu ehdollisesti"
+}
